@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Copy } from 'lucide-react';
 import type { CardDetails } from '@/pages/Index';
 import { toast } from '@/components/ui/use-toast';
+import { Button } from '@/components/ui/button';
 
 interface CardResultProps {
   details: CardDetails;
@@ -28,7 +29,14 @@ export const CardResult: React.FC<CardResultProps> = ({ details }) => {
     >
       <div className="flex justify-between items-center">
         <h3 className="font-semibold">Generated Card Details</h3>
-
+        <Button
+          variant="ghost"
+          size="sm"
+          onClick={() => copyToClipboard(formattedDetails)}
+          className="hover-lift"
+        >
+          <Copy className="h-4 w-4" />
+        </Button>
       </div>
 
       <pre className="bg-secondary/50 rounded-lg p-4 overflow-x-auto text-sm">
