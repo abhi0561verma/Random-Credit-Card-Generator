@@ -1,9 +1,9 @@
 import React from "react";
+import Index from "./pages/Index";
 
 const App = () => (
   <div>
-    <h1>Welcome to Your App</h1>
-    <p>This is your starting point!</p>
+    <Index />
   </div>
 );
 
