@@ -1,8 +1,13 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-
+import { CreditCard } from '@/components/CreditCard';
+import { CardForm } from '@/components/CardForm';
+import { CardResult } from '@/components/CardResult';
 
 const Index = () => {
+
+  const [cardDetails, setCardDetails] = useState<CardDetails | null>(null);
+  const [isGenerating, setIsGenerating] = useState(false);
   const handleGenerate = async (formData: {
     brand: string;
     country: string;
